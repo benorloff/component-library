@@ -2,7 +2,7 @@ import React from "react"
 import type { Meta, StoryObj } from "@storybook/react"
 import resolveConfig from "tailwindcss/resolveConfig"
 
-import config from "../../tailwind.config.ts"
+import config from "../../tailwind.config.cjs"
 
 const fullConfig = resolveConfig(config)
 

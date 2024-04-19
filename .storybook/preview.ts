@@ -16,14 +16,14 @@ const preview: Preview = {
     },
   },
 
-  decorators: [withThemeByClassName({
-      themes: {
-          // nameOfTheme: 'classNameForTheme',
-          light: '',
-          dark: 'dark',
-      },
-      defaultTheme: 'light',
-  })]
+  // decorators: [withThemeByClassName({
+  //     themes: {
+  //         // nameOfTheme: 'classNameForTheme',
+  //         light: '',
+  //         dark: 'dark',
+  //     },
+  //     defaultTheme: 'light',
+  // })]
 };
 
 export default preview;
