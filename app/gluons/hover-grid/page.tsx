@@ -1,9 +1,28 @@
-import { Grid, GridCell } from "@/components/grid";
-import { HoverGrid, HoverGridCell, HoverGridContent, HoverGridDescription, HoverGridFooter, HoverGridHeader, HoverGridLeader, HoverGridTitle } from "@/components/hover-grid";
-import { ArrowUpRight } from "lucide-react";
+import { 
+    HoverGrid, 
+    HoverGridCell, 
+    HoverGridContent, 
+    HoverGridDescription, 
+    HoverGridFooter, 
+    HoverGridHeader, 
+    HoverGridLeader, 
+    HoverGridTitle 
+} from "@/components/gluons/hover-grid";
+import { 
+    Breadcrumb, 
+    BreadcrumbItem, 
+    BreadcrumbLink, 
+    BreadcrumbList, 
+    BreadcrumbSeparator 
+} from "@/components/ui/breadcrumb";
+import { 
+    Tabs, 
+    TabsContent, 
+    TabsList, 
+    TabsTrigger 
+} from "@/components/ui/tabs";
 import { Code } from "bright";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { ArrowUpRight } from "lucide-react";
 
 const HoverGridCode = 
 `import { 
@@ -89,8 +108,8 @@ export const HoverGridDemo = () => {
 
 const HoverGridPage = () => {
     return (
-        <div className="container">
-            <section className="w-full py-10">
+        <div>
+            <section className="w-full space-y-2">
                 <Breadcrumb>
                     <BreadcrumbList>
                         <BreadcrumbItem>
@@ -98,11 +117,11 @@ const HoverGridPage = () => {
                         </BreadcrumbItem>
                         <BreadcrumbSeparator />
                         <BreadcrumbItem>
-                            <BreadcrumbLink href="#">Components</BreadcrumbLink>
+                            <BreadcrumbLink href="#">Gluons</BreadcrumbLink>
                         </BreadcrumbItem>
                     </BreadcrumbList>
                 </Breadcrumb>
-                <h1 className="text-5xl font-semibold">HoverGrid</h1>
+                <h1 className="text-4xl font-semibold">HoverGrid</h1>
             </section>
             <section className="flex h-full w-full py-10 m-auto items-center justify-start">
                 <Tabs defaultValue="preview" className="w-full">
