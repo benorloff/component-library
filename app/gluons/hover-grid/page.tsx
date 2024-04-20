@@ -1,207 +1,42 @@
 import { 
-    HoverGrid, 
-    HoverGridCell, 
-    HoverGridContent, 
-    HoverGridDescription, 
-    HoverGridFooter, 
-    HoverGridHeader, 
-    HoverGridLeader, 
-    HoverGridTitle 
-} from "@/components/gluons/hover-grid";
-import { 
-    Breadcrumb, 
-    BreadcrumbItem, 
-    BreadcrumbLink, 
-    BreadcrumbList, 
-    BreadcrumbSeparator 
-} from "@/components/ui/breadcrumb";
-import { 
     Tabs, 
     TabsContent, 
     TabsList, 
     TabsTrigger 
 } from "@/components/ui/tabs";
 import { Code } from "bright";
-import { ArrowUpRight } from "lucide-react";
+import { HoverGridPreview } from "./_demo/hover-grid-preview";
+import { HoverGridCode } from "./_demo/hover-grid-code";
+import { Breadcrumbs } from "@/components/breadcrumbs";
+import { PreviewToolbar } from "@/components/preview-toolbar";
 
-const HoverGridCode = 
-`import { 
-    HoverGrid, 
-    HoverGridCell, 
-    HoverGridContent, 
-    HoverGridDescription, 
-    HoverGridFooter, 
-    HoverGridHeader, 
-    HoverGridLeader, 
-    HoverGridTitle 
-} from "@/components/hover-grid";
-
-export const HoverGridDemo = () => {
-    return (
-        <HoverGrid>
-            <HoverGridCell>
-                <HoverGridHeader>
-                    <HoverGridLeader>
-                        Leader1
-                        <ArrowUpRight 
-                            size={24} 
-                            className="opacity-0 group-hover:opacity-100 translate-y-4 
-                            group-hover:translate-y-0 transition-all ease-in-out duration-500"
-                        />
-                    </HoverGridLeader>
-                </HoverGridHeader>
-                <HoverGridContent>
-                    <HoverGridTitle>Lorem ipsum.</HoverGridTitle>
-                    <HoverGridDescription>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam.
-                    </HoverGridDescription>
-                </HoverGridContent>
-                <HoverGridFooter>Footer 1</HoverGridFooter>
-            </HoverGridCell>
-            <HoverGridCell>
-                <HoverGridHeader>
-                    <HoverGridLeader>
-                        Leader1
-                        <ArrowUpRight 
-                            size={24} 
-                            className="opacity-0 group-hover:opacity-100 translate-y-4 
-                            group-hover:translate-y-0 transition-all ease-in-out duration-500"
-                        />
-                    </HoverGridLeader>
-                </HoverGridHeader>
-                <HoverGridContent>
-                    <HoverGridTitle>Lorem ipsum.</HoverGridTitle>
-                    <HoverGridDescription>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam.
-                    </HoverGridDescription>
-                </HoverGridContent>
-                <HoverGridFooter>Footer 1</HoverGridFooter>
-            </HoverGridCell>
-            <HoverGridCell>
-                <HoverGridHeader>
-                    <HoverGridLeader>
-                        Leader1
-                        <ArrowUpRight 
-                            size={24} 
-                            className="opacity-0 group-hover:opacity-100 translate-y-4 
-                            group-hover:translate-y-0 transition-all ease-in-out duration-500"
-                        />
-                    </HoverGridLeader>
-                </HoverGridHeader>
-                <HoverGridContent>
-                    <HoverGridTitle>Lorem ipsum.</HoverGridTitle>
-                    <HoverGridDescription>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam.
-                    </HoverGridDescription>
-                </HoverGridContent>
-                <HoverGridFooter>Footer 1</HoverGridFooter>
-            </HoverGridCell>
-        </HoverGrid>
-    )
-}`
+Code.theme = "dark-plus"
 
 const HoverGridPage = () => {
     return (
         <div>
             <section className="w-full space-y-2">
-                <Breadcrumb>
-                    <BreadcrumbList>
-                        <BreadcrumbItem>
-                            <BreadcrumbLink href="#">Docs</BreadcrumbLink>
-                        </BreadcrumbItem>
-                        <BreadcrumbSeparator />
-                        <BreadcrumbItem>
-                            <BreadcrumbLink href="#">Gluons</BreadcrumbLink>
-                        </BreadcrumbItem>
-                    </BreadcrumbList>
-                </Breadcrumb>
+                <Breadcrumbs />
                 <h1 className="text-4xl font-semibold">HoverGrid</h1>
             </section>
             <section className="flex h-full w-full py-10 m-auto items-center justify-start">
                 <Tabs defaultValue="preview" className="w-full">
-                    <TabsList>
-                        <TabsTrigger value="preview">Preview</TabsTrigger>
-                        <TabsTrigger value="code">Code</TabsTrigger>
-                    </TabsList>
+                    <div className="flex items-center justify-between gap-4">
+                        <TabsList>
+                            <TabsTrigger value="preview">Preview</TabsTrigger>
+                            <TabsTrigger value="code">Code</TabsTrigger>
+                        </TabsList>
+                        <PreviewToolbar copyText={HoverGridCode} />
+                    </div>
                     <TabsContent value="preview" className="w-full border rounded-md p-10">
-                        <HoverGrid>
-                            <HoverGridCell>
-                                <HoverGridHeader>
-                                    <HoverGridLeader>
-                                        Leader1
-                                        <ArrowUpRight 
-                                            size={24} 
-                                            className="opacity-0 group-hover:opacity-100 translate-y-4 
-                                            group-hover:translate-y-0 transition-all ease-in-out duration-500"
-                                        />
-                                    </HoverGridLeader>
-                                </HoverGridHeader>
-                                <HoverGridContent>
-                                    <HoverGridTitle>Lorem ipsum.</HoverGridTitle>
-                                    <HoverGridDescription>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                        Ut enim ad minim veniam.
-                                    </HoverGridDescription>
-                                </HoverGridContent>
-                                <HoverGridFooter>Footer 1</HoverGridFooter>
-                            </HoverGridCell>
-                            <HoverGridCell>
-                                <HoverGridHeader>
-                                    <HoverGridLeader>
-                                        Leader1
-                                        <ArrowUpRight 
-                                            size={24} 
-                                            className="opacity-0 group-hover:opacity-100 translate-y-4 
-                                            group-hover:translate-y-0 transition-all ease-in-out duration-500"
-                                        />
-                                    </HoverGridLeader>
-                                </HoverGridHeader>
-                                <HoverGridContent>
-                                    <HoverGridTitle>Lorem ipsum.</HoverGridTitle>
-                                    <HoverGridDescription>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                        Ut enim ad minim veniam.
-                                    </HoverGridDescription>
-                                </HoverGridContent>
-                                <HoverGridFooter>Footer 1</HoverGridFooter>
-                            </HoverGridCell>
-                            <HoverGridCell>
-                                <HoverGridHeader>
-                                    <HoverGridLeader>
-                                        Leader1
-                                        <ArrowUpRight 
-                                            size={24} 
-                                            className="opacity-0 group-hover:opacity-100 translate-y-4 
-                                            group-hover:translate-y-0 transition-all ease-in-out duration-500"
-                                        />
-                                    </HoverGridLeader>
-                                </HoverGridHeader>
-                                <HoverGridContent>
-                                    <HoverGridTitle>Lorem ipsum.</HoverGridTitle>
-                                    <HoverGridDescription>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                                        Ut enim ad minim veniam.
-                                    </HoverGridDescription>
-                                </HoverGridContent>
-                                <HoverGridFooter>Footer 1</HoverGridFooter>
-                            </HoverGridCell>
-                        </HoverGrid>
+                        <HoverGridPreview />
                     </TabsContent>
-                    <TabsContent value="code">
+                    <TabsContent value="code" className="w-full border rounded-md max-h-[500px] overflow-y-auto">
                         <Code 
                             lang="tsx"
                             title="HoverGrid.tsx"
                             lineNumbers
-                            className="w-full border rounded-md"
+                            className="!my-0"
                         >
                             {HoverGridCode}
                         </Code>

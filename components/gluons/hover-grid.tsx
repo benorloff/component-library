@@ -2,21 +2,6 @@ import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react"
 import React from "react";
 
-interface HoverCardProp {
-    href?: string;
-    icon?: React.ReactNode;
-    leader?: string;
-    title?: string;
-    description?: string;
-    className?: string;
-}
-
-interface HoverCardsProps {
-    columns?: number;
-    serializedLeaders?: boolean;
-
-}
-
 const HoverGrid = React.forwardRef<
     HTMLDivElement,
     React.HTMLAttributes<HTMLDivElement>
@@ -117,7 +102,7 @@ const HoverGridFooter = React.forwardRef<
 >(({ className, ...props }, ref) => (
     <p
         ref={ref}
-        className={cn("text-muted-foreground group-hover:text-primary transition-colors duration-500 ease-in-out", className)}
+        className={cn("text-muted-foreground font-semibold text-lg group-hover:text-primary transition-colors duration-500 ease-in-out", className)}
         {...props}
     />
 ));
