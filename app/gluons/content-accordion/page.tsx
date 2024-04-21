@@ -1,3 +1,4 @@
+import { ContentAccordion } from "@/components/gluons/content-accordion";
 import { 
     Breadcrumb, 
     BreadcrumbItem, 
@@ -37,7 +38,7 @@ const ContentAccordionPage = () => {
                         <TabsTrigger value="code">Code</TabsTrigger>
                     </TabsList>
                     <TabsContent value="preview" className="w-full border rounded-md p-10">
-                        preview
+                        <ContentAccordion />
                     </TabsContent>
                     <TabsContent value="code">
                         <Code 
