@@ -16,7 +16,7 @@ export const Wrapper = ({
         <aside
             className={cn(
                 "fixed container py-8 flex flex-col w-48 h-full bg-background border-r",
-                collapsed && "w-16"
+                collapsed && "hidden"
             )}
         >
             {children}

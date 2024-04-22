@@ -1,28 +1,14 @@
 "use client";
 
-// BACKLOG: Use localStorage to store open/collapsed state of sidebar
-// import { useLocalStorage } from "usehooks-ts";
-// import { NavItem } from "./nav-item";
 import { Wrapper } from "./wrapper";
-import { Toggle } from "./toggle";
-// import { Navigation } from "./navigation";
-// import { Footer } from "./footer";
-import { useTheme } from "next-themes";
+import { Navigation } from "./navigation";
+import { Footer } from "./footer";
 
-interface SidebarProps {
-    storageKey?: string;
-};
-
-export const Sidebar = ({
-    storageKey,
-}: SidebarProps) => {
-    const { theme } = useTheme();
+export const Sidebar = () => {
     return (
         <Wrapper>
-            {/* <Toggle /> */}
-            {/* <Navigation />
-            <Footer /> */}
-            Aside
+            <Navigation />
+            <Footer />
         </Wrapper>
     );
 };

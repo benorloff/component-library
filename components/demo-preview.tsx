@@ -57,7 +57,7 @@ export const DemoPreview = ({
             </CardHeader>
             <CardContent 
                 className={cn(
-                    "py-8 flex justify-center items-center bg-dot-grid bg-center h-[500px] overflow-hidden",
+                    "py-8 flex justify-center items-center bg-dot-grid bg-center h-auto pxoverflow-hidden",
                     devicePreview === "desktop" && "px-8",
                 )}
             >

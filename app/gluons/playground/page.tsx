@@ -1,9 +1,7 @@
-import { Button } from "@/components/ui/button";
 import { Demo } from "@/components/demo";
-import { LayoutDashboard } from "lucide-react";
-import { Sidebar, SidebarItem, SidebarLink, SidebarList } from "@/components/gluons/sidebar";
-import { Separator } from "@/components/ui/separator";
-import { Skeleton } from "@/components/ui/skeleton";
+import { Button } from "@/components/ui/button";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { LayoutDashboard, Menu } from "lucide-react";
 import Image from "next/image";
 
 const PlaygroundPage = () => {
@@ -18,7 +16,26 @@ const PlaygroundPage = () => {
             >
                 <div className="w-full h-full flex flex-col bg-background">
                     <div className="absolute h-14 w-full flex items-center justify-between gap-4 px-8 bg-background border-b">
-                        <Image src="/logoipsum.svg" width={100} height={30} alt="Logo" className="brightness-150"/>
+                        <div className="flex items-center gap-2">
+                            <Sheet>
+                                <SheetTrigger asChild>
+                                    <Button size="icon" variant="ghost">
+                                        <Menu className="h-6 w-6"/>
+                                    </Button>
+                                </SheetTrigger>
+                                <SheetContent side="left">
+                                    <SheetHeader>
+                                        <SheetTitle>Glui</SheetTitle>
+                                        <SheetDescription>Component library built on shadcn/ui</SheetDescription>
+                                    </SheetHeader>
+                                    <div>Docs</div>
+                                    <div>Docs</div>
+                                    <div>Docs</div>
+                                    <div>Docs</div>
+                                </SheetContent>
+                            </Sheet>
+                            <Image src="/logoipsum.svg" width={100} height={30} alt="Logo" className="brightness-150"/>
+                        </div>
                         <div className="h-6 w-32 bg-muted rounded-md" />
                     </div>
                     <div className="relative mt-14 h-full w-full overflow-hidden">
@@ -40,7 +57,6 @@ const PlaygroundPage = () => {
                             <div className="h-12 flex-1 bg-muted rounded-md"/>
                             <div className="h-96 flex-1 bg-muted rounded-md"/>
                             <div className="flex flex-row flex-wrap gap-4">
-                                <div className="flex-1 h-48 bg-muted rounded-md"/>
                                 <div className="flex-1 h-48 bg-muted rounded-md"/>
                                 <div className="flex-1 h-48 bg-muted rounded-md"/>
                             </div>
