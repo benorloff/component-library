@@ -33,7 +33,7 @@ export const Container = ({
     return (
         <div className={cn(
             "flex-1 p-8 overflow-auto",
-            collapsed ? "ml-0" : "lg:ml-48"
+            collapsed ? "ml-16" : "lg:ml-48"
         )}>
             {children}
         </div>

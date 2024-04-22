@@ -32,7 +32,9 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SiteHeader />
-          {children}
+          <div className="w-full max-w-screen-2xl mx-auto">
+            {children}
+          </div>
         </ThemeProvider>
       </body>
     </html>

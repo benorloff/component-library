@@ -20,8 +20,8 @@ export default function BlocksLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <main>
-        <div className="pt-16 h-full flex flex-row gap-4">
+    <main className="w-full max-w-screen-2xl">
+        <div className="relative pt-16 h-full flex flex-row gap-4">
             <Sidebar />
             <Container>
                 {children}

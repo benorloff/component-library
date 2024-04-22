@@ -1,13 +1,28 @@
-import { Code } from "bright";
+import { Code, BrightProps} from "bright";
 
-export const DemoCode = () => {
+interface DemoCodeProps {
+    title?: BrightProps["title"];
+    lang?: BrightProps["lang"];
+    lineNumbers?: BrightProps["lineNumbers"];
+    className?: BrightProps["className"];
+    code: BrightProps["code"];
+}
+
+export const DemoCode = ({
+    title,
+    lang,
+    lineNumbers,
+    className,
+    code,
+}: DemoCodeProps) => {
     return (
         <Code 
-            lang="tsx"
-            title="HoverGrid.tsx"
-            lineNumbers
-            className="!my-0"
+            title={title}
+            lang={lang}
+            lineNumbers={lineNumbers}
+            className={className}
         >
+            {code}
         </Code>
     )
 }

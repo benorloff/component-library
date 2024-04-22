@@ -2,12 +2,18 @@
 
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Laptop, Smartphone, Tablet } from "lucide-react";
+import { Laptop, LayoutDashboard, Smartphone, Tablet } from "lucide-react";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
+import { Sidebar } from "./sidebar";
 
 type DevicePreview = "desktop" | "tablet" | "smartphone"
 
-export const DemoPreview = () => {
+export const DemoPreview = ({
+    children,
+}: {
+    children: React.ReactNode,
+}) => {
     const [devicePreview, setDevicePreview] = useState<DevicePreview>("desktop")
 
     const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -49,13 +55,21 @@ export const DemoPreview = () => {
                     <div>Actions</div>
                 </div>
             </CardHeader>
-            <CardContent className="flex justify-center items-center p-8 bg-dot-grid bg-center h-96">
-                <div className="w-full h-full grow border rounded-md bg-background">
-                    <div>Desktop</div>
+            <CardContent 
+                className={cn(
+                    "p-0 flex justify-center items-center bg-dot-grid bg-center h-[500px] overflow-hidden",
+                    devicePreview !== "desktop" && "p-8",
+                )}
+            >
+                <div className={cn(
+                    "@container h-full bg-background",
+                    devicePreview === "desktop" && "relative w-full",
+                    devicePreview !== "desktop" && "grow border rounded-md bg-background",
+                    devicePreview === "tablet" && "max-w-lg",
+                    devicePreview === "smartphone" && "max-w-sm",
+                )}>
+                    {children}
                 </div>
-                {/* <div className="border rounded-md p-8 bg-background">
-                    <div>Content</div>
-                </div> */}
             </CardContent>
         </Card>
     )

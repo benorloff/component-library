@@ -4,7 +4,7 @@
 // import { useLocalStorage } from "usehooks-ts";
 // import { NavItem } from "./nav-item";
 import { Wrapper } from "./wrapper";
-// import { Toggle } from "./toggle";
+import { Toggle } from "./toggle";
 // import { Navigation } from "./navigation";
 // import { Footer } from "./footer";
 import { useTheme } from "next-themes";
@@ -19,8 +19,8 @@ export const Sidebar = ({
     const { theme } = useTheme();
     return (
         <Wrapper>
-            {/* <Toggle />
-            <Navigation />
+            {/* <Toggle /> */}
+            {/* <Navigation />
             <Footer /> */}
             Aside
         </Wrapper>
