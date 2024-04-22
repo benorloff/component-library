@@ -57,14 +57,13 @@ export const DemoPreview = ({
             </CardHeader>
             <CardContent 
                 className={cn(
-                    "p-0 flex justify-center items-center bg-dot-grid bg-center h-[500px] overflow-hidden",
-                    devicePreview !== "desktop" && "p-8",
+                    "py-8 flex justify-center items-center bg-dot-grid bg-center h-[500px] overflow-hidden",
+                    devicePreview === "desktop" && "px-8",
                 )}
             >
                 <div className={cn(
-                    "@container h-full bg-background",
-                    devicePreview === "desktop" && "relative w-full",
-                    devicePreview !== "desktop" && "grow border rounded-md bg-background",
+                    "@container grow h-full border rounded-md bg-background",
+                    devicePreview === "desktop" && "w-full",
                     devicePreview === "tablet" && "max-w-lg",
                     devicePreview === "smartphone" && "max-w-sm",
                 )}>
