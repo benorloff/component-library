@@ -15,7 +15,7 @@ import { ArrowUpRight } from "lucide-react";
 export const HoverGridPreview = () => {
     return (
         <HoverGrid>
-            <HoverGridCell>
+            <HoverGridCell className="col-span-3 @lg:col-span-1">
                 <HoverGridHeader>
                     <HoverGridLeader>
                         01
@@ -34,7 +34,7 @@ export const HoverGridPreview = () => {
                 </HoverGridContent>
                 <HoverGridFooter>Learn more</HoverGridFooter>
             </HoverGridCell>
-            <HoverGridCell>
+            <HoverGridCell className="col-span-3 @lg:col-span-1">
                 <HoverGridHeader>
                     <HoverGridLeader>
                         02
@@ -53,7 +53,7 @@ export const HoverGridPreview = () => {
                 </HoverGridContent>
                 <HoverGridFooter>Explore features</HoverGridFooter>
             </HoverGridCell>
-            <HoverGridCell>
+            <HoverGridCell className="col-span-3 @lg:col-span-1">
                 <HoverGridHeader>
                     <HoverGridLeader>
                         03

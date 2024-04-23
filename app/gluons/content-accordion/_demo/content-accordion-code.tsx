@@ -1,3 +1,4 @@
+export const ContentAccordionCode = `
 "use client"
 
 import { useState } from "react";
@@ -122,4 +123,4 @@ export const ContentAccordion = () => {
             </div>
         </div>
     )
-}
+}`.trim();

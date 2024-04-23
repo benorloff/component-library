@@ -22,8 +22,8 @@ export const DemoPreview = ({
     }
 
     return (
-        <Card>
-            <CardHeader className="border-b py-4">
+        <Card className="bg-dot-grid bg-top">
+            <CardHeader className="border-b py-4 bg-background">
                 <div className="flex flex-row items-center justify-between">
                     <div>Header</div>
                     <div className="space-x-2">
@@ -57,12 +57,12 @@ export const DemoPreview = ({
             </CardHeader>
             <CardContent 
                 className={cn(
-                    "py-8 flex justify-center items-center bg-dot-grid bg-center h-auto pxoverflow-hidden",
+                    "py-8 flex justify-center items-start h-[500px] overflow-scroll",
                     devicePreview === "desktop" && "px-8",
                 )}
             >
                 <div className={cn(
-                    "@container grow h-full border rounded-md bg-background",
+                    "@container grow border rounded-md bg-background",
                     devicePreview === "desktop" && "w-full",
                     devicePreview === "tablet" && "max-w-lg",
                     devicePreview === "smartphone" && "max-w-sm",
