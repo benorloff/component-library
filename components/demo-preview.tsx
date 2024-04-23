@@ -2,10 +2,9 @@
 
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Laptop, LayoutDashboard, Smartphone, Tablet } from "lucide-react";
+import { Laptop, Smartphone, Tablet } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import { Sidebar } from "./sidebar";
 
 type DevicePreview = "desktop" | "tablet" | "smartphone"
 
@@ -57,12 +56,12 @@ export const DemoPreview = ({
             </CardHeader>
             <CardContent 
                 className={cn(
-                    "py-8 flex justify-center items-start h-[600px] overflow-scroll",
+                    "py-8 flex justify-center items-start h-full",
                     devicePreview === "desktop" && "px-8",
                 )}
             >
-                <div className={cn(
-                    "@container grow border rounded-md bg-background",
+                <div id="demoPreviewContainer" className={cn(
+                    "@container grow border rounded-md bg-background max-h-full overflow-auto",
                     devicePreview === "desktop" && "w-full",
                     devicePreview === "tablet" && "max-w-lg",
                     devicePreview === "smartphone" && "max-w-sm",

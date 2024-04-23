@@ -1,34 +1,36 @@
 "use client";
 
-import { Cpu, Laptop, Layout, Tag } from "lucide-react";
-
 import { NavItem } from "./nav-item";
 
 export const Navigation = () => {
   const routes = [
     {
-      label: "Getting Started",
-      href: "#",
+      label: "Carousel",
+      href: "/gluons/carousel",
     },
     {
-      label: "Docs",
-      href: "#",
+      label: "Content Accordion",
+      href: "/gluons/content-accordion",
     },
     {
-      label: "Gluons",
-      href: "#",
+      label: "Header",
+      href: "/gluons/header",
     },
     {
-      label: "Components",
-      href: "#",
+      label: "HoverGrid",
+      href: "/gluons/hover-grid",
+    },
+    {
+      label: "Playground",
+      href: "/gluons/playground",
     },
   ];
 
   return (
     <ul className="flex flex-col gap-2">
-      {routes.map((route) => (
+      {routes.map((route, i) => (
         <NavItem
-          key={route.href}
+          key={i}
           label={route.label}
           href={route.href}
         />

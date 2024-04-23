@@ -41,7 +41,7 @@ export const Demo = ({
                     </DemoPreview>
                 </TabsContent>
                 <TabsContent value="code" className="w-full border rounded-md max-h-[500px] overflow-y-auto">
-                    <DemoCode 
+                    <DemoCode
                         title={title}
                         lang={lang}
                         code={code}

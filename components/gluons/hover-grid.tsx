@@ -52,7 +52,11 @@ const HoverGridLeader = React.forwardRef<
 >(({ className, children, ...props }, ref) => (
     <div
         ref={ref}
-        className={cn("uppercase text-sm pb-8 w-full flex flex-row items-center justify-between transition-all ease-in-out duration-500", className)}
+        className={cn(
+            "uppercase text-sm pb-8 w-full flex flex-row items-center justify-between", 
+            "transition-all ease-in-out duration-500", 
+            className
+        )}
         {...props}
     >
         {children}
@@ -66,7 +70,11 @@ const HoverGridContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
     <div
         ref={ref}
-        className={cn("flex flex-col grow gap-4 group-hover:gap-2 group-hover:pb-6 transition-all ease-in-out duration-500 justify-end", className)}
+        className={cn(
+            "flex flex-col grow gap-4 group-hover:gap-2 group-hover:pb-6", 
+            "transition-all ease-in-out duration-500 justify-end", 
+            className
+        )}
         {...props}
     />
 ));
@@ -90,7 +98,10 @@ const HoverGridDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
     <p
         ref={ref}
-        className={cn("text-muted-foreground group-hover:text-primary transition-colors duration-500 ease-in-out", className)}
+        className={cn("text-muted-foreground group-hover:text-primary", 
+        "transition-colors duration-500 ease-in-out", 
+        className
+    )}
         {...props}
     />
 ));
@@ -102,7 +113,9 @@ const HoverGridFooter = React.forwardRef<
 >(({ className, ...props }, ref) => (
     <p
         ref={ref}
-        className={cn("text-muted-foreground font-semibold text-lg group-hover:text-primary transition-colors duration-500 ease-in-out", className)}
+        className={cn("text-muted-foreground font-semibold text-lg", 
+        "group-hover:text-primary transition-colors duration-500 ease-in-out",
+         className)}
         {...props}
     />
 ));
