@@ -57,7 +57,7 @@ export const DemoPreview = ({
             </CardHeader>
             <CardContent 
                 className={cn(
-                    "py-8 flex justify-center items-start h-[500px] overflow-scroll",
+                    "py-8 flex justify-center items-start h-[600px] overflow-scroll",
                     devicePreview === "desktop" && "px-8",
                 )}
             >
