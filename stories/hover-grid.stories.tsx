@@ -9,7 +9,7 @@ import {
     HoverGridTitle,
     HoverGridDescription,
     HoverGridFooter,
-} from "@/components/gluons/hover-grid"
+} from "@/gluons/hover-grid"
 import { ArrowUpRight } from "lucide-react"
 
 /**

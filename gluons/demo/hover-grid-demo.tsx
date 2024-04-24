@@ -1,4 +1,5 @@
-export const HoverGridCode = `
+"use client"
+
 import { 
     HoverGrid, 
     HoverGridCell, 
@@ -8,15 +9,16 @@ import {
     HoverGridHeader, 
     HoverGridLeader, 
     HoverGridTitle 
-} from "@/components/hover-grid";
+} from "@/gluons/hover-grid";
+import { ArrowUpRight } from "lucide-react";
 
 export const HoverGridDemo = () => {
     return (
         <HoverGrid>
-            <HoverGridCell>
+            <HoverGridCell className="col-span-3 @lg:col-span-1">
                 <HoverGridHeader>
                     <HoverGridLeader>
-                        Leader1
+                        01
                         <ArrowUpRight 
                             size={24} 
                             className="opacity-0 group-hover:opacity-100 translate-y-4 
@@ -25,19 +27,17 @@ export const HoverGridDemo = () => {
                     </HoverGridLeader>
                 </HoverGridHeader>
                 <HoverGridContent>
-                    <HoverGridTitle>Lorem ipsum.</HoverGridTitle>
+                    <HoverGridTitle>Seamless Integration.</HoverGridTitle>
                     <HoverGridDescription>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam.
+                        Effortlessly connect our platform with your existing tools and workflows. Our API and pre-built integrations make it easy to get started and maximize efficiency.
                     </HoverGridDescription>
                 </HoverGridContent>
-                <HoverGridFooter>Footer 1</HoverGridFooter>
+                <HoverGridFooter>Learn more</HoverGridFooter>
             </HoverGridCell>
-            <HoverGridCell>
+            <HoverGridCell className="col-span-3 @lg:col-span-1">
                 <HoverGridHeader>
                     <HoverGridLeader>
-                        Leader1
+                        02
                         <ArrowUpRight 
                             size={24} 
                             className="opacity-0 group-hover:opacity-100 translate-y-4 
@@ -46,19 +46,17 @@ export const HoverGridDemo = () => {
                     </HoverGridLeader>
                 </HoverGridHeader>
                 <HoverGridContent>
-                    <HoverGridTitle>Lorem ipsum.</HoverGridTitle>
+                    <HoverGridTitle>Customizable Dashboard</HoverGridTitle>
                     <HoverGridDescription>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam.
+                        Create a personalized dashboard that fits your unique needs and preferences. Drag and drop widgets, custom alerts, and real-time data.
                     </HoverGridDescription>
                 </HoverGridContent>
-                <HoverGridFooter>Footer 1</HoverGridFooter>
+                <HoverGridFooter>Explore features</HoverGridFooter>
             </HoverGridCell>
-            <HoverGridCell>
+            <HoverGridCell className="col-span-3 @lg:col-span-1">
                 <HoverGridHeader>
                     <HoverGridLeader>
-                        Leader1
+                        03
                         <ArrowUpRight 
                             size={24} 
                             className="opacity-0 group-hover:opacity-100 translate-y-4 
@@ -67,16 +65,15 @@ export const HoverGridDemo = () => {
                     </HoverGridLeader>
                 </HoverGridHeader>
                 <HoverGridContent>
-                    <HoverGridTitle>Lorem ipsum.</HoverGridTitle>
+                    <HoverGridTitle>Collaborative Workspaces.</HoverGridTitle>
                     <HoverGridDescription>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                        Ut enim ad minim veniam.
+                        Foster teamwork and streamline communication with our collaborative workspaces. Share files, assign tasks, and discuss projects in real-time.
                     </HoverGridDescription>
                 </HoverGridContent>
-                <HoverGridFooter>Footer 1</HoverGridFooter>
+                <HoverGridFooter>Discover workspaces</HoverGridFooter>
             </HoverGridCell>
         </HoverGrid>
     )
 }
-`.trim();
+
+export default HoverGridDemo;

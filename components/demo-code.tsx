@@ -1,3 +1,5 @@
+"use server"
+
 import { Code, BrightProps} from "bright";
 
 interface DemoCodeProps {

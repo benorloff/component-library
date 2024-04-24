@@ -1,30 +1,44 @@
+"use client"
+
+import { Index } from "@/gluons/demo"
+
 import { 
     Tabs, 
     TabsContent, 
     TabsList, 
     TabsTrigger 
 } from "@/components/ui/tabs";
-import { DemoCode } from "./demo-code";
-import { DemoPreview } from "./demo-preview";
 import { PreviewToolbar } from "./preview-toolbar";
+import { DemoPreview } from "./demo-preview";
+import React from "react";
+import { DemoCode } from "./demo-code";
 
-interface DemoProps {
-    title: string,
-    lang: string,
-    lineNumbers: boolean,
-    className: string,
-    code: string,
-    children: React.ReactNode
+interface GluonDemoProps {
+    name: string,
 }
 
-export const Demo = ({
-    title,
-    lang,
-    lineNumbers,
-    className,
-    code,
-    children,
-}: DemoProps) => {
+export const GluonDemo = ({
+    name
+}: GluonDemoProps) => {
+    
+    const Preview = React.useMemo(() => {
+        const Component = Index[name].component
+
+        if (!Component) {
+            return (
+                <p className="text-muted-foreground">
+                    Component{" "}
+                    <code className="relative rounded bg-muted p-1 font-mono">
+                        {name}
+                    </code>{" "}
+                    not found.
+                </p>
+            )
+        }
+
+        return <Component />
+    }, [name])
+
     return (
         <section className="flex h-full w-full py-10 m-auto items-start justify-start">
             <Tabs defaultValue="preview" className="w-full">
@@ -37,16 +51,15 @@ export const Demo = ({
                 </div>
                 <TabsContent value="preview">
                     <DemoPreview>
-                        {children}
+                        {Preview}
                     </DemoPreview>
                 </TabsContent>
                 <TabsContent value="code" className="w-full border rounded-md max-h-[500px] overflow-y-auto">
                     <DemoCode
-                        title={title}
-                        lang={lang}
-                        code={code}
-                        className={className}
-                        lineNumbers={lineNumbers}
+                        title={`${name}.tsx`}
+                        lang="tsx"
+                        code="code"
+                        lineNumbers={true}
                     />
                 </TabsContent>
             </Tabs>

@@ -1,18 +1,15 @@
-import { Demo } from "@/components/demo";
-import { Header, HeaderCenter, HeaderContainer, HeaderLeft, HeaderMobileMenuTrigger, HeaderRight } from "@/components/gluons/header";
-import { Button } from "@/components/ui/button";
-import { AlignLeft } from "lucide-react";
+import { 
+    Header, 
+    HeaderCenter, 
+    HeaderContainer, 
+    HeaderLeft, 
+    HeaderMobileMenuTrigger, 
+    HeaderRight 
+} from "@/gluons/header";
 
-const HeaderPage = async () => {
-    
+const HeaderDemo =  () => {
     return (
-        <Demo
-        title="Header.tsx"
-        lang="tsx"
-        code={`header.tsx`}
-        lineNumbers={true}
-        className="!my-0"
-        >
+        <>
             <Header>
                 <HeaderContainer>
                     <HeaderLeft>
@@ -44,8 +41,8 @@ const HeaderPage = async () => {
                     <div className="flex h-64 bg-muted rounded-md mb-8" />
                 </div>
             </main>
-        </Demo>
+        </>
     )
 }
 
-export default HeaderPage;
+export default HeaderDemo;

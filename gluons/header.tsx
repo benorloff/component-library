@@ -3,7 +3,7 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 import { Head } from "react-day-picker";
-import { Button } from "../ui/button";
+import { Button } from "../components/ui/button";
 import { AlignLeft } from "lucide-react";
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"

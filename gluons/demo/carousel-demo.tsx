@@ -1,4 +1,3 @@
-export const CarouselCode = `
 "use client"
 
 import React, { useEffect, useState } from "react"
@@ -46,8 +45,8 @@ const CarouselSlide = ({
                 </div>
                 <div className="relative order-first @lg:order-last h-full min-h-[350px] w-full">
                     <Image 
-                        src={\`/unsplash-abstract-\${number}.jpeg\`}
-                        alt={\`Feature \${number}\`}
+                        src={`/unsplash-abstract-${number}.jpeg`}
+                        alt={`Feature ${number}`}
                         fill
                         className="object-cover"
                     />
@@ -57,7 +56,7 @@ const CarouselSlide = ({
     )
 }
 
-export const Carousel = () => {
+export const CarouselDemo = () => {
     
     const [activeFeature, setActiveFeature] = useDebounceValue(1, 50)
     const [scrollProgress, setScrollProgress] = useState(0)
@@ -119,7 +118,7 @@ export const Carousel = () => {
                     <CarouselSlide 
                         key={i + 1}
                         number={i + 1} 
-                        title={\`Feature \${i + 1}\`} 
+                        title={`Feature ${i + 1}`} 
                         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua." 
                     />
                 ))}
@@ -129,7 +128,7 @@ export const Carousel = () => {
             >
                 <div 
                     className="absolute top-0 w-1/3 h-[1px] bg-primary ease-linear"
-                    style={{ left: \`\${scrollProgress}%\` }} 
+                    style={{ left: `${scrollProgress}%` }} 
                 />
                 {Array.from({ length: 3 }).map((_, i) => (
                     <div 
@@ -148,4 +147,6 @@ export const Carousel = () => {
             </div>
         </div>
     )
-}`.trim();
+}
+
+export default CarouselDemo;

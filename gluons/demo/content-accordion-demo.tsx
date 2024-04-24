@@ -1,4 +1,3 @@
-export const ContentAccordionCode = `
 "use client"
 
 import { useState } from "react";
@@ -11,7 +10,7 @@ import {
     AccordionTrigger 
 } from "@/components/ui/accordion";
 
-export const ContentAccordion = () => {
+const ContentAccordionDemo = () => {
     const [active, setActive] = useState<number | null>(1);
 
     return (
@@ -123,4 +122,6 @@ export const ContentAccordion = () => {
             </div>
         </div>
     )
-}`.trim();
+}
+
+export default ContentAccordionDemo;

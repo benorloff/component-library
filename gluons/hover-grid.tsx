@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { ArrowUpRight } from "lucide-react"
 import React from "react";
 
 const HoverGrid = React.forwardRef<

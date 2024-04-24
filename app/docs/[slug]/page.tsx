@@ -1,10 +1,6 @@
-import { format, parseISO } from 'date-fns'
 import { allDocs } from 'contentlayer/generated'
-import { getMDXComponent } from 'next-contentlayer/hooks'
 import { Breadcrumbs } from '@/components/breadcrumbs'
-import { Demo } from '@/components/demo'
-import { HoverGridCode } from '@/app/gluons/hover-grid/_demo/hover-grid-code'
-import { HoverGridPreview } from '@/app/gluons/hover-grid/_demo/hover-grid-preview'
+import { Mdx } from '@/components/mdx-components'
 
 interface DocPageProps {
     params: {
@@ -39,28 +35,18 @@ const DocPage = ({
 
     if (!doc) throw new Error(`doc not found for slug: ${params.slug}`)
 
-    const Content = getMDXComponent(doc.body.code)
-
-    if (!doc) throw new Error(`doc not found for slug: ${params.slug}`)
-
-    const previewCodeTitle = doc.title.toLowerCase().replace(/\s/g, '-')
-
     return (
         <div>
             <section className="w-full space-y-2">
                 <Breadcrumbs />
-                <h1 className="text-4xl font-semibold">{doc.title}</h1>
-                <p className="text-muted-foreground">{doc.description}</p>
+                <h1 className="text-4xl font-semibold">
+                    {doc.title}
+                </h1>
+                <p className="text-muted-foreground">
+                    {doc.description}
+                </p>
+                <Mdx code={doc.body.code}/>
             </section>
-            <Demo
-                title={`${previewCodeTitle}.tsx`}
-                lang="tsx"
-                code={HoverGridCode}
-                lineNumbers={true}
-                className="!my-0"
-            >
-                <HoverGridPreview />
-            </Demo>
         </div>
     )
 }
