@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Laptop, Smartphone, Tablet } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { Index } from "@/gluons/demo";
+import { DemoPreviewContainer } from "./demo-preview-container";
 
 type DevicePreview = "desktop" | "tablet" | "smartphone"
 
@@ -60,14 +62,9 @@ export const DemoPreview = ({
                     devicePreview === "desktop" && "px-8",
                 )}
             >
-                <div id="demoPreviewContainer" className={cn(
-                    "@container grow border rounded-md bg-background max-h-full overflow-auto",
-                    devicePreview === "desktop" && "w-full",
-                    devicePreview === "tablet" && "max-w-lg",
-                    devicePreview === "smartphone" && "max-w-sm",
-                )}>
+                <DemoPreviewContainer devicePreview={devicePreview}>
                     {children}
-                </div>
+                </DemoPreviewContainer>
             </CardContent>
         </Card>
     )

@@ -7,6 +7,8 @@ module.exports = {
     './app/**/*.{ts,tsx}',
     './stories/**/*.{ts,tsx}',
     './storybook/**/*.{ts,tsx}',
+    './content/**/*.mdx',
+    './gluons/**/*.{ts,tsx}',
 	],
   prefix: "",
   theme: {

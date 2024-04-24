@@ -107,7 +107,7 @@ export const CarouselDemo = () => {
     return (
         <div 
             id="FeatureCarouselContainer" 
-            className="max-w-screen-xl mx-auto px-4 space-y-8"
+            className="@container h-full overflow-auto max-w-screen-xl px-4 space-y-8 bg-background"
         >
             <div 
                 id="FeatureCarouselTrack" 
@@ -124,10 +124,10 @@ export const CarouselDemo = () => {
                 ))}
             </div>
             <div 
-                className="relative grid grid-cols-3 w-full text-center border-collapse overflow-clip"
+                className="relative grid grid-cols-3 w-auto mx-4 @lg:mx-8 text-center border-t border-dashed border-muted"
             >
                 <div 
-                    className="absolute top-0 w-1/3 h-[1px] bg-primary ease-linear"
+                    className="absolute -top-[1px] w-1/3 h-[2px] bg-primary"
                     style={{ left: `${scrollProgress}%` }} 
                 />
                 {Array.from({ length: 3 }).map((_, i) => (
@@ -136,7 +136,7 @@ export const CarouselDemo = () => {
                         data-id={i + 1}
                         role="button"
                         className={cn(
-                            "border-t border-dashed border-muted py-8 px-2 text-muted-foreground",
+                            "py-8 mx-auto text-muted-foreground",
                             activeFeature === (i + 1) && "text-primary"
                         )}
                         onClick={(e) => handleClick(e)}

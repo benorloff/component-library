@@ -26,6 +26,7 @@ const HoverGridCell = React.forwardRef<
         className={cn(
             "flex flex-col bg-background group gap-4 hover:gap-2 p-8 hover:bg-muted/40", 
             "justify-between transition-all ease-in-out outline outline-1 duration-500",
+            "col-span-1",
             className
         )}
         {...props}

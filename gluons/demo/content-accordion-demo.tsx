@@ -14,8 +14,8 @@ const ContentAccordionDemo = () => {
     const [active, setActive] = useState<number | null>(1);
 
     return (
-        <div className="@container grid grid-cols-3 items-stretch">
-            <div className="col-span-3 @lg:col-span-2">
+        <div className="@container grid grid-cols-3 items-stretch bg-background">
+            <div className="relative col-span-3 @3xl:col-span-2">
                 {active === 1 && (
                     <Image
                         src="/unsplash-abstract-1.jpeg"
@@ -53,12 +53,12 @@ const ContentAccordionDemo = () => {
                 />
                 )}
             </div>
-            <div className="col-span-3 @lg:col-span-1">
+            <div className="col-span-3 @3xl:col-span-1">
                 <Accordion type="single" defaultValue="1" className="flex flex-col items-stretch h-full border-t border-x">
                     <AccordionItem 
                         value="1"
                         className={cn(
-                            "relative grow text-lg group before:content[''] before:w-[2px] before:absolute before:top-0 before:left-0 before:bg-foreground before:transition-all before:ease-in-out before:duration-300 ",
+                            "relative grow flex flex-col justify-center text-lg group before:content[''] before:w-[2px] before:absolute before:top-0 before:left-0 before:bg-foreground before:transition-all before:ease-in-out before:duration-300 ",
                             active === 1 
                                 ? "before:h-full before:opacity-100"
                                 : "before:h-0 before:opacity-0"
@@ -79,7 +79,7 @@ const ContentAccordionDemo = () => {
                     <AccordionItem 
                         value="2"
                         className={cn(
-                            "relative grow text-lg group before:content[''] before:w-[2px] before:absolute before:top-0 before:left-0 before:bg-foreground before:transition-all before:ease-in-out before:duration-300 ",
+                            "relative grow flex flex-col justify-center text-lg group before:content[''] before:w-[2px] before:absolute before:top-0 before:left-0 before:bg-foreground before:transition-all before:ease-in-out before:duration-300 ",
                             active === 2 
                                 ? "before:h-full before:opacity-100"
                                 : "before:h-0 before:opacity-0"
@@ -100,7 +100,7 @@ const ContentAccordionDemo = () => {
                     <AccordionItem 
                         value="3"
                         className={cn(
-                            "relative grow text-lg group before:content[''] before:w-[2px] before:absolute before:top-0 before:left-0 before:bg-foreground before:transition-all before:ease-in-out before:duration-300 ",
+                            "relative grow flex flex-col justify-center text-lg group before:content[''] before:w-[2px] before:absolute before:top-0 before:left-0 before:bg-foreground before:transition-all before:ease-in-out before:duration-300 ",
                             active === 3 
                                 ? "before:h-full before:opacity-100"
                                 : "before:h-0 before:opacity-0"
