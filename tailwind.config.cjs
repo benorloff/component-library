@@ -76,6 +76,7 @@ module.exports = {
       },
       backgroundImage: {
         "dot-grid": "url('/dot-grid.svg')",
+        "grid": "url('/bg-grid.svg')",
         "diagonal-lines": "url('/diagonal-lines.svg')",
       },
     },

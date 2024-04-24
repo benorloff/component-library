@@ -48,7 +48,7 @@ export const NavItem = ({
         )}
         {!collapsed && (
                 <Link href={href}>
-                    <div className="flex items-center gap-x-2">
+                    <div className="flex items-center gap-x-2 text-muted-foreground hover:underline">
                         <span>
                             {label}
                         </span>

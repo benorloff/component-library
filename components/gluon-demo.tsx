@@ -22,7 +22,7 @@ export const GluonDemo = ({
 }: GluonDemoProps) => {
     
     const Preview = React.useMemo(() => {
-        const Component = Index[name].component
+        const Component = Index["demo"][name].component
 
         if (!Component) {
             return (

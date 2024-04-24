@@ -1,17 +1,26 @@
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
+import { cn } from "@/lib/utils";
 
 export const Resizable = ({
+    devicePreview,
     children,
 }: {
+    devicePreview: "desktop" | "tablet" | "smartphone" | undefined,
     children: React.ReactNode,
 }) => {
     return (
         <ResizablePanelGroup 
             direction="horizontal"
-            className="w-full"
+            className={cn(
+                "items-center min-w-96",
+                devicePreview === "desktop" && "w-full",
+                devicePreview === "tablet" && "max-w-lg",
+                devicePreview === "smartphone" && "max-w-sm",
+            
+            )}
         >
             <ResizablePanel defaultSize={100} className="min-w-96">
-                    <div className="h-[500px] flex flex-col justify-center overflow-auto border border-foreground bg-[url('/dot-grid.svg')] bg-center">
+                    <div className="max-h-[500px] flex flex-col justify-center overflow-auto bg-[url('/dot-grid.svg')] bg-center">
                         {children}
                     </div>
             </ResizablePanel>

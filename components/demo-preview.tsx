@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import { Index } from "@/gluons/demo";
 import { DemoPreviewContainer } from "./demo-preview-container";
 
-type DevicePreview = "desktop" | "tablet" | "smartphone"
+type DevicePreview = "desktop" | "tablet" | "smartphone" | undefined
 
 export const DemoPreview = ({
     children,
@@ -23,7 +23,7 @@ export const DemoPreview = ({
     }
 
     return (
-        <Card className="bg-dot-grid bg-top">
+        <Card className="bg-grid bg-top">
             <CardHeader className="border-b py-4 bg-background">
                 <div className="flex flex-row items-center justify-between">
                     <div>Header</div>
@@ -58,7 +58,7 @@ export const DemoPreview = ({
             </CardHeader>
             <CardContent 
                 className={cn(
-                    "py-8 flex justify-center items-start h-full",
+                    "py-8 flex justify-center items-start h-[600px] bg-foreground/5",
                     devicePreview === "desktop" && "px-8",
                 )}
             >
