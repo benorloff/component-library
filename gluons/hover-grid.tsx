@@ -8,7 +8,7 @@ const HoverGrid = React.forwardRef<
     <div
         ref={ref}
         className={cn(
-            "grid grid-flow-row grid-cols-1 md:grid-cols-2 lg:grid-cols-3 divide-x divide-y w-full",
+            "grid grid-flow-row divide-x divide-y w-full",
             className
         )}
         {...props}

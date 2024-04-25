@@ -25,9 +25,7 @@ export const Resizable = ({
                     </div>
             </ResizablePanel>
             <ResizableHandle className="w-1.5 h-8 ml-1.5 my-auto bg-muted-foreground rounded-full" />
-            <ResizablePanel className="w-[1px] min-w-[1px]">
-                <div />
-            </ResizablePanel>
+            <ResizablePanel className="w-[1px] min-w-[1px]" />
         </ResizablePanelGroup>
     )
 }

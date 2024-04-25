@@ -7,7 +7,6 @@ import { DemoCode } from "./demo-code";
 import HoverGridDemo from "@/gluons/demo/hover-grid-demo";
 import { HoverGrid, HoverGridCell } from "@/gluons/hover-grid";
 import { cn } from "@/lib/utils";
-import { DemoPreviewContainer } from "./demo-preview-container";
 import { Header, HeaderCenter, HeaderContainer, HeaderLeft, HeaderMobileMenuTrigger, HeaderRight } from "@/gluons/header";
 
 const components = {
@@ -16,25 +15,6 @@ const components = {
     Carousel,
     DemoCode,
     DemoPreview,
-    DemoPreviewContainer: ({
-        devicePreview,
-        children,
-        className,
-        ...props
-    }: React.ComponentProps<typeof DemoPreviewContainer>) => (
-        <DemoPreviewContainer
-            devicePreview={devicePreview}
-            className={cn(
-                "@container grow border rounded-md bg-background max-h-full overflow-auto",
-                devicePreview === "desktop" && "w-full",
-                devicePreview === "tablet" && "max-w-lg",
-                devicePreview === "smartphone" && "max-w-sm",
-            )}
-            {...props}
-        >
-            {children}
-        </DemoPreviewContainer>
-    ),
     Header: ({ className, ...props }: React.ComponentProps<typeof Header>) => (
         <Header
             className={cn(
@@ -89,7 +69,6 @@ const components = {
             {...props}
         />
     ),
-    HoverGridDemo,
     HoverGrid: ({ className, ...props }: React.ComponentProps<typeof HoverGrid>) => (
         <HoverGrid
             className={cn(
@@ -104,7 +83,7 @@ const components = {
             className={cn(
                 "flex flex-col bg-background group gap-4 hover:gap-2 p-8 hover:bg-muted/40", 
                 "justify-between transition-all ease-in-out outline outline-1 duration-500",
-                "col-span-1",
+                "@md:col-span-1 @lg:col-span-1",
                 className
             )}
             {...props}

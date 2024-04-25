@@ -1,5 +1,3 @@
-"use client"
-
 import { Index } from "@/gluons/demo"
 
 import { 
@@ -56,10 +54,11 @@ export const GluonDemo = ({
                 </TabsContent>
                 <TabsContent value="code" className="w-full border rounded-md max-h-[500px] overflow-y-auto">
                     <DemoCode
-                        title={`${name}.tsx`}
+                        title="component.tsx"
                         lang="tsx"
                         code="code"
                         lineNumbers={true}
+                        className="!my-0"
                     />
                 </TabsContent>
             </Tabs>

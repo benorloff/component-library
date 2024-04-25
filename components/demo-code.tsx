@@ -3,11 +3,11 @@
 import { Code, BrightProps} from "bright";
 
 interface DemoCodeProps {
-    title?: BrightProps["title"];
-    lang?: BrightProps["lang"];
-    lineNumbers?: BrightProps["lineNumbers"];
-    className?: BrightProps["className"];
-    code: BrightProps["code"];
+    title?: string;
+    lang?: string;
+    lineNumbers?: boolean;
+    className?: string;
+    code: string;
 }
 
 export const DemoCode = ({
