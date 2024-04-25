@@ -10,6 +10,15 @@ import { cn } from "@/lib/utils";
 import { Header, HeaderCenter, HeaderContainer, HeaderLeft, HeaderMobileMenuTrigger, HeaderRight } from "@/gluons/header";
 
 const components = {
+    code: ({ className, ...props }: React.HTMLAttributes<HTMLElement>) => (
+        <code
+            className={cn(
+                "relative rounded bg-muted p-1 font-mono",
+                className
+            )}
+            {...props}
+        />
+    ),
     GluonDemo,
     CarouselDemo,
     Carousel,
@@ -72,7 +81,7 @@ const components = {
     HoverGrid: ({ className, ...props }: React.ComponentProps<typeof HoverGrid>) => (
         <HoverGrid
             className={cn(
-                "grid grid-flow-row grid-cols-1 @md:grid-cols-2 @lg:grid-cols-3 divide-x divide-y w-full",
+                "grid grid-cols-1 @md:grid-cols-2 @lg:grid-cols-3 divide-x divide-y w-full",
                 className
             )}
             {...props}

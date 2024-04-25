@@ -1,13 +1,20 @@
 "use server"
 
 import { Code, BrightProps} from "bright";
+import { useTheme } from "next-themes";
 
 interface DemoCodeProps {
-    title?: string;
-    lang?: string;
-    lineNumbers?: boolean;
+    title?: BrightProps["title"];
+    lang?: BrightProps["lang"];
+    lineNumbers?: BrightProps["lineNumbers"];
     className?: string;
     code: string;
+}
+
+Code.theme = {
+    dark: 'dark-plus',
+    light: 'light-plus',
+    lightSelector: 'html.light',
 }
 
 export const DemoCode = ({
@@ -17,14 +24,15 @@ export const DemoCode = ({
     className,
     code,
 }: DemoCodeProps) => {
+
     return (
-        <Code 
-            title={title}
-            lang={lang}
-            lineNumbers={lineNumbers}
-            className={className}
-        >
-            {code}
-        </Code>
+            <Code 
+                title={title}
+                lang={lang}
+                lineNumbers={lineNumbers}
+                className={className}
+            >
+                {code}
+            </Code>
     )
 }

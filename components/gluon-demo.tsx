@@ -1,22 +1,24 @@
-import { Index } from "@/gluons/demo"
+import fs from "fs";
+import { Index } from "@/gluons/demo";
 
-import { 
-    Tabs, 
-    TabsContent, 
-    TabsList, 
-    TabsTrigger 
+import {
+    Tabs,
+    TabsContent,
+    TabsList,
+    TabsTrigger
 } from "@/components/ui/tabs";
-import { PreviewToolbar } from "./preview-toolbar";
-import { DemoPreview } from "./demo-preview";
 import React from "react";
-import { DemoCode } from "./demo-code";
+import { DemoCode } from "@/components/demo-code";
+import { DemoPreview } from "@/components/demo-preview";
+import { PreviewToolbar } from "@/components/preview-toolbar";
+import path from "path";
 
-interface GluonDemoProps {
+interface GluonDemoProps{
     name: string,
 }
 
-export const GluonDemo = ({
-    name
+export const GluonDemo = async ({
+    name,
 }: GluonDemoProps) => {
     
     const Preview = React.useMemo(() => {
@@ -37,8 +39,18 @@ export const GluonDemo = ({
         return <Component />
     }, [name])
 
+    let Code;
+
+    try {
+        const src = Index["demo"][name].files[0]
+        const filePath = path.join(process.cwd(), src)
+        Code = fs.readFileSync(filePath, "utf8")
+    } catch (error) {
+        console.error(error)
+    }
+
     return (
-        <section className="flex h-full w-full py-10 m-auto items-start justify-start">
+        <div className="flex h-full w-full py-10 m-auto items-start justify-start">
             <Tabs defaultValue="preview" className="w-full">
                 <div className="flex items-center justify-between gap-4">
                     <TabsList>
@@ -54,14 +66,14 @@ export const GluonDemo = ({
                 </TabsContent>
                 <TabsContent value="code" className="w-full border rounded-md max-h-[500px] overflow-y-auto">
                     <DemoCode
-                        title="component.tsx"
+                        title={`${name}.tsx`}
                         lang="tsx"
-                        code="code"
+                        code={Code || "Failed to load code"}
                         lineNumbers={true}
                         className="!my-0"
                     />
                 </TabsContent>
             </Tabs>
-        </section>
+        </div>
     )
 }
